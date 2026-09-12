@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wooApps — Windows Utilities</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Header / Hero -->
+  <header class="border-b border-slate-200 bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-14 text-center">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100 mb-6">
+        Windows 10 22H2 x64 (build 19045) & Windows 11 x64
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+        wooApps
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        wooApps is a Windows monorepo for two independently built, installed, and versioned utilities.
+      </p>
+      <p class="text-xs text-slate-500 mt-2">
+        Shared low-level Office conversion and PDF primitives live in <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-700">src/woocore</code> and are not installed as a separate product.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-10 space-y-12">
+
+    <!-- Applications Section -->
+    <section class="space-y-6">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Applications</h2>
+        <p class="text-sm text-slate-500 mt-1">Click each card to expand the complete User Guide, Requirements, Installation, and Version History.</p>
+      </div>
+
+      <!-- App 1: wooBundle Details Accordion -->
+      <details class="group bg-white rounded-2xl border border-slate-200 shadow-sm transition-all open:ring-2 open:ring-indigo-500/20">
+        <summary class="cursor-pointer p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 select-none hover:bg-slate-50/50 rounded-2xl transition">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Context Menu & Send to</span>
+              <span class="text-xs text-slate-400 font-mono">v{version}</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">wooBundle™</h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-2xl">
+              Convert, merge, organize, and split PDF and Microsoft Office documents with Windows Explorer integration.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 self-start sm:self-center">
+            <span class="text-xs font-semibold text-indigo-600 group-open:hidden">View Full Manual &rarr;</span>
+            <span class="text-xs font-semibold text-slate-500 hidden group-open:inline">Collapse Manual &uarr;</span>
+            <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 group-open:rotate-180 transition-transform">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+          </div>
+        </summary>
+
+        <!-- wooBundle Full Expanded Document -->
+        <div class="border-t border-slate-100 p-6 sm:p-8 space-y-8 text-sm text-slate-700 bg-slate-50/30">
+          
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-2">Overview</h4>
+            <p class="leading-relaxed">wooBundle™ is a Windows 10 22H2 x64 (build 19045) and Windows 11 x64 utility for converting, merging, organizing, and splitting PDF and Microsoft Office documents. The current application version is defined in <code class="bg-slate-100 px-1.5 py-0.5 rounded text-xs font-mono">src/woobundle/version.py</code>.</p>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-3">Features</h4>
+            <ul class="grid sm:grid-cols-2 gap-2 list-disc list-inside text-xs leading-relaxed text-slate-600">
+              <li>Merge PDF, Word, Excel, and PowerPoint files into one PDF Bundle</li>
+              <li>Convert selected Word, Excel, and PowerPoint documents into individual PDFs</li>
+              <li>Accept .zip selections: inspect metadata without extracting, then extract after Start into per-run temporary directory</li>
+              <li>Generate filename bookmarks and patent-file-wrapper bookmark colors</li>
+              <li>Choose Document Start Mode for merged Bundles: Continuous or Odd Page Start</li>
+              <li>Convert single selected PDF: detect FW from bookmark titles, report Natural Sort order, optionally reorder top-level page blocks, and apply FW coloring</li>
+              <li>Split single selected PDF at bookmark then page boundaries using Maximum Words per PDF limit</li>
+              <li>Name Splitter Parts as <code class="bg-slate-100 px-1 py-0.5 rounded font-mono">[OutputFilename]_PartN_pStart-End_chStart-End</code></li>
+              <li>Insert selectable-text summary page at start of each Splitter Part and remap Bookmarks after that page</li>
+              <li>Integrate with Windows Explorer legacy context menu for selected files</li>
+              <li>Integrate with Windows Explorer Send to menu for all users</li>
+            </ul>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6 bg-white p-5 rounded-xl border border-slate-200">
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Installation & Location</h4>
+              <p class="text-xs leading-relaxed mb-2">Installed per-machine to the native 64-bit Program Files folder:</p>
+              <code class="block bg-slate-900 text-slate-100 p-2.5 rounded-lg text-xs font-mono">C:\Program Files\wooBundle\</code>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">The installer creates/updates the Explorer context-menu entry (files only) and the all-users Send to shortcut.</p>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Supported Input Extensions</h4>
+              <ul class="text-xs space-y-1 font-mono text-slate-600">
+                <li><strong class="text-slate-800">PDF:</strong> .pdf</li>
+                <li><strong class="text-slate-800">Word:</strong> .doc, .docx, .docm</li>
+                <li><strong class="text-slate-800">Text/HTML:</strong> .txt, .rtf, .odt, .html, .htm, .mht</li>
+                <li><strong class="text-slate-800">Excel:</strong> .xlsx, .xlsm</li>
+                <li><strong class="text-slate-800">PowerPoint:</strong> .ppt, .pptx, .pptm, .pps, .ppsx, .ppsm</li>
+                <li><strong class="text-slate-800">ZIP:</strong> .zip (selection container only)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-3">Usage</h4>
+            <ol class="list-decimal list-inside space-y-2 text-xs leading-relaxed text-slate-600 bg-white p-5 rounded-xl border border-slate-200">
+              <li>Select one or more supported files in Windows Explorer.</li>
+              <li>Right-click and select <strong>wooBundle™</strong> (on Windows 11, select <em>Show more options</em> when necessary). Alternatively, right-click and choose <strong>Send to &rarr; wooBundle™</strong>.</li>
+              <li>Configure the input screen for the selection:
+                <ul class="list-disc list-inside pl-5 mt-1 space-y-1 text-slate-500">
+                  <li><strong>Two or more files, Merged Bundle:</strong> Output Mode, Bookmark Type, Filename Sort Order, Document Start Mode, Output Filename, Output Folder.</li>
+                  <li><strong>Two or more files, Individual PDFs:</strong> Output Mode and Output Folder.</li>
+                  <li><strong>Single non-PDF file:</strong> Output Filename and Output Folder only.</li>
+                  <li><strong>Single PDF, Converter:</strong> Processing Mode, Current Bookmark Order, Bookmark Sort Order, Output Filename, Output Folder.</li>
+                  <li><strong>Single PDF, Splitter:</strong> Processing Mode, Current Bookmark Order, Maximum Words per PDF, Output Filename, Output Folder.</li>
+                </ul>
+              </li>
+              <li>Select <strong>Start</strong>. ZIP members are extracted only after Start into a per-run temporary folder.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-2">Output Naming Rules</h4>
+            <div class="grid sm:grid-cols-2 gap-2 text-xs font-mono">
+              <div class="bg-white p-3 rounded-lg border border-slate-200">Merged FW: <span class="text-indigo-600">[FolderName]__fw.pdf</span></div>
+              <div class="bg-white p-3 rounded-lg border border-slate-200">Standard Merged: <span class="text-indigo-600">[FolderName].pdf</span></div>
+              <div class="bg-white p-3 rounded-lg border border-slate-200">Blank Merged: <span class="text-indigo-600">wooBundle.pdf</span></div>
+              <div class="bg-white p-3 rounded-lg border border-slate-200">Splitter Parts: <span class="text-indigo-600">[Output]_PartN_pStart-End_chStart-End.pdf</span></div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-2">Known Limitations</h4>
+            <ul class="list-disc list-inside space-y-1 text-xs text-slate-600 leading-relaxed bg-white p-5 rounded-xl border border-slate-200">
+              <li>All selected files must reside in the same folder.</li>
+              <li>Explorer context-menu processing supports at most 100 selected files (and at most 100 processing files after ZIP expansion).</li>
+              <li>Send to selection size is limited by the Windows command-line length.</li>
+              <li>ZIP files are not converted or merged as documents. Nested ZIPs, unreadable, encrypted, or unsafe ZIPs are rejected.</li>
+              <li>Password-protected PDFs requiring user credentials are not supported.</li>
+              <li>Legacy .xls and binary .xlsb workbooks, or workbooks with Excel 4.0 macro sheets, are rejected for safety.</li>
+              <li>Office documents are opened with macros disabled.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-2">Version History</h4>
+            <div class="space-y-4 text-xs">
+              <div class="bg-white p-4 rounded-xl border border-slate-200">
+                <div class="font-bold text-slate-900 mb-1">Current release (v{version})</div>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-600">
+                  <li>Replaced static per-file Explorer command with native x64 legacy context-menu shell extension</li>
+                  <li>Launch one wooBundle process for each Explorer context-menu selection</li>
+                  <li>Preserved all-users Send to integration</li>
+                  <li>Accept .zip selections; inspect metadata without extracting; extract after Start</li>
+                  <li>Minor fixes, general performance optimizations, and stability enhancements</li>
+                </ul>
+              </div>
+              <div class="bg-white p-4 rounded-xl border border-slate-200">
+                <div class="font-bold text-slate-900 mb-1">v0.2.0</div>
+                <p class="text-slate-600">Windows Explorer Send to integration for all users; skip collection wait for Send to and multi-file arguments.</p>
+              </div>
+              <div class="bg-white p-4 rounded-xl border border-slate-200">
+                <div class="font-bold text-slate-900 mb-1">v0.1.0</div>
+                <p class="text-slate-600">Initial release; PDF/Office conversion & merge; bookmark generation; patent color rules; static Explorer command.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-500 pt-2 border-t border-slate-200 flex flex-wrap justify-between items-center gap-2">
+            <span>Owner: <strong>HyunWoo Lee</strong> (maybe601@gmail.com)</span>
+            <span>Copyright &copy; 2026 HyunWoo Lee. All rights reserved.</span>
+          </div>
+
+        </div>
+      </details>
+
+      <!-- App 2: wooIEEE Details Accordion -->
+      <details class="group bg-white rounded-2xl border border-slate-200 shadow-sm transition-all open:ring-2 open:ring-emerald-500/20">
+        <summary class="cursor-pointer p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 select-none hover:bg-slate-50/50 rounded-2xl transition">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Start Menu App</span>
+              <span class="text-xs text-slate-400 font-mono">v{version}</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">wooIEEE™</h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-2xl">
+              Group IEEE Mentor contribution files into searchable PDF Bundles with auto-generated TOC and Separators.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 self-start sm:self-center">
+            <span class="text-xs font-semibold text-emerald-600 group-open:hidden">View Full Manual &rarr;</span>
+            <span class="text-xs font-semibold text-slate-500 hidden group-open:inline">Collapse Manual &uarr;</span>
+            <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 group-open:rotate-180 transition-transform">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+          </div>
+        </summary>
+
+        <!-- wooIEEE Full Expanded Document -->
+        <div class="border-t border-slate-100 p-6 sm:p-8 space-y-8 text-sm text-slate-700 bg-slate-50/30">
+          
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-2">Overview</h4>
+            <p class="leading-relaxed">wooIEEE™ is a Windows 10 22H2 x64 (build 19045) and Windows 11 x64 utility that groups IEEE Mentor contribution files into searchable PDF Bundles with a generated Table of Contents, Separator pages, bookmarks, manifests, and error logs.</p>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-3">Features</h4>
+            <ul class="grid sm:grid-cols-2 gap-2 list-disc list-inside text-xs leading-relaxed text-slate-600">
+              <li>Convert Word, Text/HTML, Excel, and PowerPoint files to PDF using Microsoft Office</li>
+              <li>Set Bundle Target Count on Home screen (default 30 for current run; unsaved)</li>
+              <li>Group documents by Standard and Year without splitting a DCN group</li>
+              <li>Generate A4 searchable TOC and Separator pages with bundled Unicode fonts</li>
+              <li>Title TOC as <code class="bg-slate-100 px-1 py-0.5 rounded font-mono">IEEE 802.{Standard} Contribution Bundle : {StartDCN} - {EndDCN}</code></li>
+              <li>Place TOC bookmark as first outline entry, with contribution bookmarks below</li>
+              <li>Create contribution bookmarks and full-row TOC links to each Separator</li>
+              <li>Allow only one wooIEEE instance per Windows user session</li>
+            </ul>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6 bg-white p-5 rounded-xl border border-slate-200">
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Installation & Launch</h4>
+              <p class="text-xs leading-relaxed mb-2">Installed per-machine to the native 64-bit Program Files folder:</p>
+              <code class="block bg-slate-900 text-slate-100 p-2.5 rounded-lg text-xs font-mono mb-2">C:\Program Files\wooIEEE\</code>
+              <p class="text-xs text-slate-500 leading-relaxed">The installer creates a Start Menu shortcut named wooIEEE™. It does not add an Explorer context-menu entry.</p>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Filename Requirements</h4>
+              <p class="text-xs leading-relaxed text-slate-600 mb-2">IEEE Mentor filenames must strictly follow the format:</p>
+              <code class="block bg-slate-100 text-slate-800 p-2 rounded text-xs font-mono mb-2">[Standard]-[YY]-[DCN]-[REV]-[GROUP]-[TITLE].[EXT]</code>
+              <p class="text-xs text-slate-500">Corresponding Office desktop apps are required; no Python runtime needed.</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-3">Usage</h4>
+            <ol class="list-decimal list-inside space-y-2 text-xs leading-relaxed text-slate-600 bg-white p-5 rounded-xl border border-slate-200">
+              <li>Start wooIEEE™ from the Start Menu.</li>
+              <li>Confirm the Input Folder. The last Browse-selected folder is restored if present; otherwise Windows Downloads is used.</li>
+              <li>Set Bundle Target Count if needed (defaults to 30; integer &ge; 1).</li>
+              <li>Select <strong>Start</strong>.</li>
+              <li>If unsupported files are detected, select <em>Process only supported files</em> or <em>Cancel</em>.</li>
+              <li>After completion, click <strong>Open Folder</strong> to inspect generated outputs.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-2">Output Folder & Naming Rules</h4>
+            <p class="text-xs text-slate-600 mb-2">Results are written to <code class="bg-slate-100 px-1 py-0.5 rounded font-mono">{InputFolder}\wooieee_output</code>.</p>
+            <div class="grid sm:grid-cols-2 gap-2 text-xs font-mono">
+              <div class="bg-white p-3 rounded-lg border border-slate-200">Bundle PDF: <span class="text-emerald-600">Bundle_[Standard]-[YY]-[StartDCN]-[EndDCN].pdf</span></div>
+              <div class="bg-white p-3 rounded-lg border border-slate-200">Manifest CSV: <span class="text-emerald-600">Bundle_[Standard]-[YY]-[StartDCN]-[EndDCN]_manifest.csv</span></div>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">First collision uses (2), then (3), and so on for both PDF and manifest pairs.</p>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-2">Known Limitations</h4>
+            <ul class="list-disc list-inside space-y-1 text-xs text-slate-600 leading-relaxed bg-white p-5 rounded-xl border border-slate-200">
+              <li>Existing outputs are auto-excluded only under immediate <code class="font-mono">wooieee_output</code> directory.</li>
+              <li>Password-protected PDFs requiring user credentials are not supported.</li>
+              <li>Office documents are opened with macros disabled and without Office-generated PDF bookmarks.</li>
+              <li>Characters that bundled Noto Sans / Noto Sans KR fonts cannot draw trigger a fatal error.</li>
+              <li>The installer does not force-terminate instances. Silent update/uninstall is unsupported if an instance is running.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-base font-bold text-slate-900 mb-2">Version History</h4>
+            <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs">
+              <div class="font-bold text-slate-900 mb-1">Current release (Initial release)</div>
+              <ul class="list-disc list-inside space-y-0.5 text-slate-600">
+                <li>IEEE Mentor scan, parse, sort, and DCN-preserving grouping</li>
+                <li>PDF and Microsoft Office conversion</li>
+                <li>A4 TOC, Separator, bookmark, link, and manifest generation</li>
+                <li>Single-instance locking and installer graceful shutdown</li>
+                <li>Home screen Bundle Target Count configuration</li>
+                <li>TOC Generation Attribution footer with clickable project URL</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-500 pt-2 border-t border-slate-200 flex flex-wrap justify-between items-center gap-2">
+            <span>Owner: <strong>HyunWoo Lee</strong> (maybe601@gmail.com)</span>
+            <span>Copyright &copy; 2026 HyunWoo Lee. All rights reserved.</span>
+          </div>
+
+        </div>
+      </details>
+    </section>
+
+    <!-- Shared Layer & Python Standard Library -->
+    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8">
+      <h3 class="text-lg font-bold text-slate-900 mb-2">Architecture & Python Standard Library</h3>
+      <p class="text-xs text-slate-600 leading-relaxed mb-6">
+        Low-level Office conversion and PDF primitives live in <code class="bg-slate-100 px-1 py-0.5 rounded font-mono">src/woocore</code> and are statically bundled into each executable. The applications do not depend on each other.
+      </p>
+      
+      <div class="grid sm:grid-cols-2 gap-4 text-xs">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+          <div class="font-bold text-slate-800 mb-2">Python Standard Library (Built-in)</div>
+          <p class="text-slate-600 mb-2 leading-relaxed"><code class="font-mono text-slate-800">tkinter / ttk</code> is part of the Python Standard Library, not a pip dependency. Windowed builds embed the native Tcl/Tk runtime.</p>
+          <ul class="space-y-1 font-mono text-slate-500">
+            <li><strong>wooBundle:</strong> tkinter/ttk, zipfile, pathlib, tempfile</li>
+            <li><strong>wooIEEE:</strong> tkinter/ttk, pathlib, tempfile</li>
+          </ul>
+        </div>
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between">
+          <div>
+            <div class="font-bold text-slate-800 mb-2">Shared Foundation (wooCore)</div>
+            <p class="text-slate-600 leading-relaxed">
+              Provides unified Microsoft Office COM automation via pywin32, deterministic sorting, PDF structure validation, and per-run safe tempfile management.
+            </p>
+          </div>
+          <div class="text-[11px] text-slate-400 mt-2">Source: src/woocore (embedded per package)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Third-Party Runtime Libraries & Notices Accordion -->
+    <section>
+      <details class="group bg-white rounded-2xl border border-slate-200 shadow-sm transition-all">
+        <summary class="cursor-pointer p-6 sm:p-8 flex items-center justify-between gap-4 select-none hover:bg-slate-50/50 rounded-2xl transition">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Third-Party Notices & Licenses</h3>
+            <p class="text-xs text-slate-500 mt-1">Click to view third-party open-source components, licenses, and repository sources.</p>
+          </div>
+          <div class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 group-open:rotate-180 transition-transform">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </summary>
+
+        <div class="border-t border-slate-100 p-6 sm:p-8 space-y-6">
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Each distributed application includes third-party components that are subject to their respective licenses. The installer also places a consolidated <code class="bg-slate-100 px-1 py-0.5 rounded font-mono">THIRD_PARTY_NOTICES.txt</code> in the application folder.
+          </p>
+
+          <!-- Libraries Table -->
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs text-slate-600">
+              <thead class="bg-slate-50 text-[11px] uppercase font-semibold text-slate-500 border-b border-slate-200">
+                <tr>
+                  <th class="px-4 py-3">Component</th>
+                  <th class="px-4 py-3">Used In</th>
+                  <th class="px-4 py-3">Purpose</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Source</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-slate-900 font-mono">pypdf</td>
+                  <td class="px-4 py-3 font-mono text-indigo-600">wooCore (Both)</td>
+                  <td class="px-4 py-3">PDF merge, validation, bookmarks, and annotations</td>
+                  <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px]">BSD-3-Clause</span></td>
+                  <td class="px-4 py-3"><a href="https://github.com/py-pdf/pypdf" target="_blank" class="text-indigo-600 hover:underline">GitHub</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-slate-900 font-mono">pywin32</td>
+                  <td class="px-4 py-3 font-mono text-indigo-600">wooCore (Both)</td>
+                  <td class="px-4 py-3">Microsoft Office COM and Windows APIs</td>
+                  <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px]">Mixed (BSD-style)</span></td>
+                  <td class="px-4 py-3"><a href="https://github.com/mhammond/pywin32" target="_blank" class="text-indigo-600 hover:underline">GitHub</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-slate-900 font-mono">reportlab</td>
+                  <td class="px-4 py-3 font-mono text-emerald-600">wooIEEE only</td>
+                  <td class="px-4 py-3">TOC and Separator page generation</td>
+                  <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px]">BSD license</span></td>
+                  <td class="px-4 py-3"><a href="https://www.reportlab.com/" target="_blank" class="text-emerald-600 hover:underline">reportlab.com</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-slate-900 font-mono">Pillow</td>
+                  <td class="px-4 py-3 font-mono text-emerald-600">wooIEEE only</td>
+                  <td class="px-4 py-3">Imported by ReportLab at runtime</td>
+                  <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px]">MIT-CMU</span></td>
+                  <td class="px-4 py-3"><a href="https://github.com/python-pillow/Pillow" target="_blank" class="text-emerald-600 hover:underline">GitHub</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-slate-900 font-mono">Noto Sans / KR</td>
+                  <td class="px-4 py-3 font-mono text-emerald-600">wooIEEE only</td>
+                  <td class="px-4 py-3">Bundled Unicode fonts for TOC and Separator text</td>
+                  <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px]">SIL OFL 1.1</span></td>
+                  <td class="px-4 py-3"><a href="https://github.com/notofonts/notofonts.github.io" target="_blank" class="text-emerald-600 hover:underline">GitHub</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-10 mt-12">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <div>Copyright &copy; 2026 <strong>HyunWoo Lee</strong>. All rights reserved.</div>
+      <div>
+        Project Website: <a href="https://redcamille.github.io" class="text-indigo-600 hover:underline font-medium">https://redcamille.github.io</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
