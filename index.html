@@ -55,11 +55,11 @@
           <div class="space-y-2">
             <div class="flex items-center gap-2">
               <span class="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-lg">Context Menu &amp; Send to</span>
-              <span class="text-xs text-slate-500 font-mono">v0.3.0</span>
+              <span class="text-xs text-slate-500 font-mono">v0.4.0</span>
             </div>
             <h3 class="text-2xl font-bold text-white">wooBundle™</h3>
             <p class="text-sm text-slate-400 leading-relaxed max-w-2xl">
-              Convert, merge, organize, and split PDF and Microsoft Office documents with Windows Explorer integration.
+              Convert, merge, organize, and split PDF, Microsoft Office, and Visio documents with Windows Explorer integration.
             </p>
           </div>
           <div class="flex items-center gap-2 self-start sm:self-center">
@@ -76,23 +76,23 @@
           
           <div>
             <h4 class="text-base font-bold text-white mb-2">Overview</h4>
-            <p class="leading-relaxed">wooBundle™ is a Windows 10 22H2 x64 (build 19045) and Windows 11 x64 utility for converting, merging, organizing, and splitting PDF and Microsoft Office documents. The current application version is defined in <code class="bg-slate-800 text-indigo-300 border border-slate-700 px-1.5 py-0.5 rounded text-xs font-mono">src/woobundle/version.py</code>.</p>
+            <p class="leading-relaxed">wooBundle™ is a Windows 10 22H2 x64 (build 19045) and Windows 11 x64 utility for converting, merging, organizing, and splitting PDF and Microsoft Office documents.</p>
           </div>
 
           <div>
             <h4 class="text-base font-bold text-white mb-3">Features</h4>
             <ul class="grid sm:grid-cols-2 gap-2.5 list-disc list-inside text-xs leading-relaxed text-slate-400">
-              <li>Merge PDF, Word, Excel, and PowerPoint files into one PDF Bundle</li>
-              <li>Convert selected Word, Excel, and PowerPoint documents into individual PDFs</li>
-              <li>Accept .zip selections: inspect metadata without extracting, then extract after Start into per-run temporary directory</li>
+              <li>Merge PDF, Word, Excel, PowerPoint, and Visio files into one PDF Bundle</li>
+              <li>Convert selected Word, Excel, PowerPoint, and Visio documents into individual PDFs</li>
+              <li>Accept .zip selections as a supported format: inspect ZIP metadata without extracting, then extract after Start into a per-run temporary directory</li>
               <li>Generate filename bookmarks and patent-file-wrapper bookmark colors</li>
               <li>Choose Document Start Mode for merged Bundles: Continuous or Odd Page Start</li>
-              <li>Convert single selected PDF: detect FW from bookmark titles, report Natural Sort order, optionally reorder top-level page blocks, and apply FW coloring</li>
-              <li>Split single selected PDF at bookmark then page boundaries using Maximum Words per PDF limit</li>
-              <li>Name Splitter Parts as <code class="bg-slate-800 text-indigo-300 px-1.5 py-0.5 rounded font-mono border border-slate-700">[OutputFilename]_PartN_pStart-End_chStart-End</code></li>
-              <li>Insert selectable-text summary page at start of each Splitter Part and remap Bookmarks after that page</li>
-              <li>Integrate with Windows Explorer legacy context menu for selected files</li>
-              <li>Integrate with Windows Explorer Send to menu for all users</li>
+              <li>Convert a single selected PDF: detect FW from bookmark titles, report Natural Sort or EP/US date bookmark order, optionally reorder top-level or second-level page blocks, and apply FW coloring</li>
+              <li>Split a single selected PDF at bookmark then page boundaries using a Maximum Words per PDF limit</li>
+              <li>Name Splitter Parts as <code class="bg-slate-800 text-indigo-300 px-1.5 py-0.5 rounded font-mono border border-slate-700">[OutputFilename]_PartN_pStart-End_chStart-End</code>, using printed page ranges and chapter IDs</li>
+              <li>Insert a selectable-text summary page at the start of each Splitter Part and remap Bookmarks after that page</li>
+              <li>Integrate with the Windows Explorer legacy context menu for selected files</li>
+              <li>Integrate with the Windows Explorer Send to menu for all users</li>
             </ul>
           </div>
 
@@ -101,17 +101,18 @@
               <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Installation &amp; Location</h4>
               <p class="text-xs leading-relaxed mb-2 text-slate-400">Installed per-machine to the native 64-bit Program Files folder:</p>
               <code class="block bg-black/40 text-indigo-300 p-2.5 rounded-xl text-xs font-mono border border-slate-800">C:\Program Files\wooBundle\</code>
-              <p class="text-xs text-slate-500 mt-2 leading-relaxed">The installer creates/updates the Explorer context-menu entry (files only) and the all-users Send to shortcut.</p>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">The installer creates or updates the Windows Explorer context-menu entry and the all-users Send to shortcut. The context-menu command is registered for files only, not for folders or folder backgrounds.</p>
             </div>
             <div>
               <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Supported Input Extensions</h4>
               <ul class="text-xs space-y-1 font-mono text-slate-400">
                 <li><strong class="text-slate-200">PDF:</strong> .pdf</li>
-                <li><strong class="text-slate-200">Word:</strong> .doc, .docx, .docm</li>
+                <li><strong class="text-slate-200">Word:</strong> .doc, .docx, .docm, .dot</li>
                 <li><strong class="text-slate-200">Text/HTML:</strong> .txt, .rtf, .odt, .html, .htm, .mht</li>
                 <li><strong class="text-slate-200">Excel:</strong> .xlsx, .xlsm</li>
-                <li><strong class="text-slate-200">PowerPoint:</strong> .ppt, .pptx, .pptm, .pps, .ppsx, .ppsm</li>
-                <li><strong class="text-slate-200">ZIP:</strong> .zip (selection container only)</li>
+                <li><strong class="text-slate-200">PowerPoint:</strong> .ppt, .pptx, .pptm, .pps, .ppsx, .ppsm, .odp, .potx, .potm, .pot</li>
+                <li><strong class="text-slate-200">Visio:</strong> .vsd, .vsdx</li>
+                <li><strong class="text-slate-200">ZIP:</strong> .zip (selection format only; members must be supported document types)</li>
               </ul>
             </div>
           </div>
@@ -120,40 +121,46 @@
             <h4 class="text-base font-bold text-white mb-3">Usage</h4>
             <ol class="list-decimal list-inside space-y-2 text-xs leading-relaxed text-slate-400 bg-slate-900/80 p-5 rounded-2xl border border-slate-700/50">
               <li>Select one or more supported files in Windows Explorer.</li>
-              <li>Right-click and select <strong>wooBundle™</strong> (on Windows 11, select <em class="text-slate-300">Show more options</em> when necessary). Alternatively, right-click and choose <strong class="text-slate-300">Send to &rarr; wooBundle™</strong>.</li>
-              <li>Configure the input screen for the selection:
+              <li>Right-click and select <strong>wooBundle™</strong>. On Windows 11, select <em class="text-slate-300">Show more options</em> when necessary. Alternatively, right-click and choose <strong class="text-slate-300">Send to &rarr; wooBundle™</strong>.</li>
+              <li>Configure the input screen for the current selection. Mode is based on files after ZIP expansion; a ZIP itself is not a processing input:
                 <ul class="list-disc list-inside pl-5 mt-1.5 space-y-1 text-slate-400">
-                  <li><strong class="text-slate-300">Two or more files, Merged Bundle:</strong> Output Mode, Bookmark Type, Filename Sort Order, Document Start Mode, Output Filename, Output Folder.</li>
+                  <li><strong class="text-slate-300">Two or more files, One merged PDF Bundle:</strong> Output Mode, Bookmark Type, Filename Sort Order, Document Start Mode, Output Filename, Output Folder.</li>
                   <li><strong class="text-slate-300">Two or more files, Individual PDFs:</strong> Output Mode and Output Folder.</li>
-                  <li><strong class="text-slate-300">Single non-PDF file:</strong> Output Filename and Output Folder only.</li>
-                  <li><strong class="text-slate-300">Single PDF, Converter:</strong> Processing Mode, Current Bookmark Order, Bookmark Sort Order, Output Filename, Output Folder.</li>
-                  <li><strong class="text-slate-300">Single PDF, Splitter:</strong> Processing Mode, Current Bookmark Order, Maximum Words per PDF, Output Filename, Output Folder.</li>
+                  <li><strong class="text-slate-300">Exactly one non-PDF file:</strong> Output Filename and Output Folder only (One merged PDF Bundle, Original Only, Ascending).</li>
+                  <li><strong class="text-slate-300">Exactly one PDF, Converter:</strong> Processing Mode, Current Bookmark Order, Bookmark Sort Order, Output Filename, Output Folder.</li>
+                  <li><strong class="text-slate-300">Exactly one PDF, Splitter:</strong> Processing Mode, Current Bookmark Order, Maximum Words per PDF, Output Filename, Output Folder.</li>
                 </ul>
               </li>
-              <li>Select <strong class="text-slate-300">Start</strong>. ZIP members are extracted only after Start into a per-run temporary folder.</li>
+              <li>Select <strong class="text-slate-300">Start</strong>. ZIP members are extracted only after Start.</li>
             </ol>
           </div>
 
           <div>
             <h4 class="text-base font-bold text-white mb-2">Output Naming Rules</h4>
             <div class="grid sm:grid-cols-2 gap-2 text-xs font-mono">
-              <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50">Merged FW: <span class="text-indigo-400 font-semibold">[FolderName]__fw.pdf</span></div>
-              <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50">Standard Merged: <span class="text-indigo-400 font-semibold">[FolderName].pdf</span></div>
+              <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50">Merged FW: <span class="text-indigo-400 font-semibold">[CurrentFolderName]__fw.pdf</span></div>
+              <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50">Other Merged: <span class="text-indigo-400 font-semibold">[CurrentFolderName].pdf</span></div>
               <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50">Blank Merged: <span class="text-indigo-400 font-semibold">wooBundle.pdf</span></div>
-              <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50">Splitter Parts: <span class="text-indigo-400 font-semibold">[Output]_PartN_pStart-End_chStart-End.pdf</span></div>
+              <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50">Individual Files: <span class="text-indigo-400 font-semibold">[Filename].pdf (smallest numeric suffix)</span></div>
+              <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50 sm:col-span-2">Splitter Parts: <span class="text-indigo-400 font-semibold">[OutputFilename]_PartN_pStart-End_chStart-End.pdf</span></div>
             </div>
           </div>
 
           <div>
             <h4 class="text-base font-bold text-white mb-2">Known Limitations</h4>
             <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-400 leading-relaxed bg-slate-900/80 p-5 rounded-2xl border border-slate-700/50">
-              <li>All selected files must reside in the same folder.</li>
-              <li>Explorer context-menu processing supports at most 100 selected files (and at most 100 processing files after ZIP expansion).</li>
+              <li>All selected files must be in the same folder.</li>
+              <li>Explorer context-menu processing supports at most 100 selected files, and at most 100 processing files after ZIP expansion.</li>
               <li>Send to selection size is limited by the Windows command-line length.</li>
-              <li>ZIP files are not converted or merged as documents. Nested ZIPs, unreadable, encrypted, or unsafe ZIPs are rejected.</li>
+              <li>A ZIP is not converted or merged as a document. Nested ZIP members are unsupported. Unreadable, empty, encrypted, or unsafe ZIPs are rejected.</li>
               <li>Password-protected PDFs requiring user credentials are not supported.</li>
-              <li>Legacy .xls and binary .xlsb workbooks, or workbooks with Excel 4.0 macro sheets, are rejected for safety.</li>
+              <li>Damaged, protected, or interactive Office documents may fail conversion.</li>
               <li>Office documents are opened with macros disabled.</li>
+              <li><code class="font-mono text-slate-300">.odp</code> conversion requires PowerPoint OpenDocument support.</li>
+              <li><code class="font-mono text-slate-300">.vsd</code> and <code class="font-mono text-slate-300">.vsdx</code> conversion requires Microsoft Visio.</li>
+              <li>Legacy .xls and binary .xlsb workbooks are rejected because Excel 4.0 macro safety cannot be verified before opening.</li>
+              <li>.xlsx and .xlsm workbooks containing Excel 4.0 macro sheets are rejected.</li>
+              <li>Advanced PDF bookmark or annotation properties unsupported by pypdf may not be preserved.</li>
             </ul>
           </div>
 
@@ -161,22 +168,30 @@
             <h4 class="text-base font-bold text-white mb-2">Version History</h4>
             <div class="space-y-3 text-xs">
               <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
-                <div class="font-bold text-white mb-1">Current release (v0.3.0)</div>
+                <div class="font-bold text-white mb-1">Current release (v0.4.0) — 2026-09-17</div>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                  <li>Added 3 fallback recovery methods for PDF conversion failures</li>
+                  <li>Some minor fixes and improvements</li>
+                </ul>
+              </div>
+              <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                <div class="font-bold text-white mb-1">v0.3.0</div>
                 <ul class="list-disc list-inside space-y-0.5 text-slate-400">
                   <li>Replaced static per-file Explorer command with native x64 legacy context-menu shell extension</li>
                   <li>Launch one wooBundle process for each Explorer context-menu selection</li>
-                  <li>Preserved all-users Send to integration</li>
-                  <li>Accept .zip selections; inspect metadata without extracting; extract after Start</li>
-                  <li>Minor fixes, general performance optimizations, and stability enhancements</li>
+                  <li>Preserved existing all-users Send to integration</li>
+                  <li>Accept .zip selections; inspect metadata without extracting; extract after Start into per-run temporary directory</li>
+                  <li>Accept Word .dot, PowerPoint .odp/.potx/.potm/.pot, and Visio .vsd/.vsdx</li>
+                  <li>General performance optimizations and stability enhancements</li>
                 </ul>
               </div>
               <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
                 <div class="font-bold text-white mb-1">v0.2.0</div>
-                <p class="text-slate-400">Windows Explorer Send to integration for all users; skip collection wait for Send to and multi-file arguments.</p>
+                <p class="text-slate-400">Windows Explorer Send to integration for all users; skip collection wait for Send to and for two or more file arguments; minor fixes.</p>
               </div>
               <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
                 <div class="font-bold text-white mb-1">v0.1.0</div>
-                <p class="text-slate-400">Initial release; PDF/Office conversion &amp; merge; bookmark generation; patent color rules; static Explorer command.</p>
+                <p class="text-slate-400">Initial release; PDF/Office conversion &amp; merge; individual PDF conversion; bookmark generation and patent color rules; static Explorer command.</p>
               </div>
             </div>
           </div>
@@ -195,7 +210,7 @@
           <div class="space-y-2">
             <div class="flex items-center gap-2">
               <span class="text-xs font-bold uppercase tracking-wider text-teal-400 bg-teal-500/10 border border-teal-500/20 px-3 py-1 rounded-lg">Start Menu App</span>
-              <span class="text-xs text-slate-500 font-mono">v0.1.0</span>
+              <span class="text-xs text-slate-500 font-mono">v0.2.0</span>
             </div>
             <h3 class="text-2xl font-bold text-white">wooIEEE™</h3>
             <p class="text-sm text-slate-400 leading-relaxed max-w-2xl">
@@ -222,12 +237,12 @@
           <div>
             <h4 class="text-base font-bold text-white mb-3">Features</h4>
             <ul class="grid sm:grid-cols-2 gap-2.5 list-disc list-inside text-xs leading-relaxed text-slate-400">
-              <li>Convert Word, Text/HTML, Excel, and PowerPoint files to PDF using Microsoft Office</li>
-              <li>Set Bundle Target Count on Home screen (default 30 for current run; unsaved)</li>
+              <li>Convert Word, Text/HTML, Excel, PowerPoint, and Visio files to PDF using Microsoft Office or Visio</li>
+              <li>Set Bundle Target Count on the Home screen (default 30 for the current run; the value is not saved)</li>
               <li>Group documents by Standard and Year without splitting a DCN group</li>
               <li>Generate A4 searchable TOC and Separator pages with bundled Unicode fonts</li>
-              <li>Title TOC as <code class="bg-slate-800 text-teal-300 border border-slate-700 px-1.5 py-0.5 rounded font-mono">IEEE 802.{Standard} Contribution Bundle : {StartDCN} - {EndDCN}</code></li>
-              <li>Place TOC bookmark as first outline entry, with contribution bookmarks below</li>
+              <li>Title the TOC as <code class="bg-slate-800 text-teal-300 border border-slate-700 px-1.5 py-0.5 rounded font-mono">IEEE 802.{Standard} Contribution Bundle : {StartDCN} - {EndDCN}</code></li>
+              <li>Place a TOC bookmark as the first outline entry, with contribution bookmarks unchanged below it</li>
               <li>Create contribution bookmarks and full-row TOC links to each Separator</li>
               <li>Allow only one wooIEEE instance per Windows user session</li>
             </ul>
@@ -238,13 +253,18 @@
               <h4 class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">Installation &amp; Launch</h4>
               <p class="text-xs leading-relaxed mb-2 text-slate-400">Installed per-machine to the native 64-bit Program Files folder:</p>
               <code class="block bg-black/40 text-teal-300 p-2.5 rounded-xl text-xs font-mono mb-2 border border-slate-800">C:\Program Files\wooIEEE\</code>
-              <p class="text-xs text-slate-500 leading-relaxed">The installer creates a Start Menu shortcut named wooIEEE™. It does not add an Explorer context-menu entry.</p>
+              <p class="text-xs text-slate-500 leading-relaxed">The installer creates a Start Menu shortcut named wooIEEE™. It does not add a Windows Explorer context-menu entry.</p>
             </div>
             <div>
-              <h4 class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">Filename Requirements</h4>
-              <p class="text-xs leading-relaxed text-slate-400 mb-2">IEEE Mentor filenames must strictly follow the format:</p>
-              <code class="block bg-black/40 text-slate-300 border border-slate-800 p-2 rounded-xl text-xs font-mono mb-2">[Standard]-[YY]-[DCN]-[REV]-[GROUP]-[TITLE].[EXT]</code>
-              <p class="text-xs text-slate-500">Corresponding Office desktop apps are required; no Python runtime needed.</p>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">Supported Input Extensions</h4>
+              <ul class="text-xs space-y-1 font-mono text-slate-400">
+                <li><strong class="text-slate-200">PDF:</strong> .pdf</li>
+                <li><strong class="text-slate-200">Word:</strong> .doc, .docx, .docm, .dot</li>
+                <li><strong class="text-slate-200">Text/HTML:</strong> .txt, .rtf, .odt, .html, .htm, .mht</li>
+                <li><strong class="text-slate-200">Excel:</strong> .xlsx, .xls, .xlsm, .xlsb</li>
+                <li><strong class="text-slate-200">PowerPoint:</strong> .ppt, .pptx, .pptm, .pps, .ppsx, .ppsm, .odp, .potx, .potm, .pot</li>
+                <li><strong class="text-slate-200">Visio:</strong> .vsd, .vsdx</li>
+              </ul>
             </div>
           </div>
 
@@ -252,47 +272,67 @@
             <h4 class="text-base font-bold text-white mb-3">Usage</h4>
             <ol class="list-decimal list-inside space-y-2 text-xs leading-relaxed text-slate-400 bg-slate-900/80 p-5 rounded-2xl border border-slate-700/50">
               <li>Start wooIEEE™ from the Start Menu.</li>
-              <li>Confirm the Input Folder. The last Browse-selected folder is restored if present; otherwise Windows Downloads is used.</li>
-              <li>Set Bundle Target Count if needed (defaults to 30; integer &ge; 1).</li>
+              <li>Confirm the Input Folder. The last Browse-selected folder is restored when it still exists; otherwise the Windows Downloads folder is used when present.</li>
+              <li>Set Bundle Target Count if needed. Each launch starts at 30. The value must be an integer of 1 or greater.</li>
               <li>Select <strong class="text-slate-300">Start</strong>.</li>
-              <li>If unsupported files are detected, select <em class="text-slate-300">Process only supported files</em> or <em class="text-slate-300">Cancel</em>.</li>
-              <li>After completion, click <strong class="text-slate-300">Open Folder</strong> to inspect generated outputs.</li>
+              <li>If unsupported files are listed, choose <em class="text-slate-300">Process only supported files</em> or <em class="text-slate-300">Cancel</em>.</li>
+              <li>After completion, use <strong class="text-slate-300">Open Folder</strong> to open the Output Folder.</li>
             </ol>
           </div>
 
           <div>
             <h4 class="text-base font-bold text-white mb-2">Output Folder &amp; Naming Rules</h4>
-            <p class="text-xs text-slate-400 mb-2">Results are written to <code class="bg-slate-800 text-teal-300 border border-slate-700 px-1.5 py-0.5 rounded font-mono">{InputFolder}\wooieee_output</code>.</p>
+            <p class="text-xs text-slate-400 mb-2">Results are written to <code class="bg-slate-800 text-teal-300 border border-slate-700 px-1.5 py-0.5 rounded font-mono">{InputFolder}\wooieee_v0.2.0_output</code>.</p>
+            <p class="text-xs text-slate-500 mb-3">Directories whose names start with <code class="font-mono text-slate-400">wooieee</code>, and directories named <code class="font-mono text-slate-400">temp</code> or <code class="font-mono text-slate-400">logs</code>, are excluded from input discovery together with their descendants.</p>
             <div class="grid sm:grid-cols-2 gap-2 text-xs font-mono">
               <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50">Bundle PDF: <span class="text-teal-400 font-semibold">Bundle_[Standard]-[YY]-[StartDCN]-[EndDCN].pdf</span></div>
               <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50">Manifest CSV: <span class="text-teal-400 font-semibold">Bundle_[Standard]-[YY]-[StartDCN]-[EndDCN]_manifest.csv</span></div>
             </div>
-            <p class="text-xs text-slate-500 mt-2">First collision uses (2), then (3), and so on for both PDF and manifest pairs.</p>
+            <p class="text-xs text-slate-500 mt-2">First collision uses (2), then (3), and so on for both the PDF and matching manifest pair.</p>
           </div>
 
           <div>
             <h4 class="text-base font-bold text-white mb-2">Known Limitations</h4>
             <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-400 leading-relaxed bg-slate-900/80 p-5 rounded-2xl border border-slate-700/50">
-              <li>Existing outputs are auto-excluded only under immediate <code class="font-mono text-slate-300">wooieee_output</code> directory.</li>
+              <li>Existing wooIEEE outputs are auto-excluded only under directories whose names start with <code class="font-mono text-slate-300">wooieee</code>.</li>
               <li>Password-protected PDFs requiring user credentials are not supported.</li>
+              <li>Damaged, protected, or interactive Office documents may fail conversion.</li>
               <li>Office documents are opened with macros disabled and without Office-generated PDF bookmarks.</li>
-              <li>Characters that bundled Noto Sans / Noto Sans KR fonts cannot draw trigger a fatal error.</li>
-              <li>The installer does not force-terminate instances. Silent update/uninstall is unsupported if an instance is running.</li>
+              <li><code class="font-mono text-slate-300">.odp</code> conversion requires PowerPoint OpenDocument support.</li>
+              <li><code class="font-mono text-slate-300">.vsd</code> and <code class="font-mono text-slate-300">.vsdx</code> conversion requires Microsoft Visio.</li>
+              <li>Characters that the bundled Noto Sans / Noto Sans KR fonts cannot draw are treated as a fatal error.</li>
+              <li>Complex named destinations, external-file actions, or advanced annotations may be lost where pypdf cannot preserve them.</li>
+              <li>The installer does not force-terminate instances. If a running instance does not exit after a graceful-shutdown request, update or uninstall is aborted.</li>
+              <li>Silent or very silent install, update, and uninstall are not supported when a running instance must be closed automatically.</li>
             </ul>
           </div>
 
           <div>
             <h4 class="text-base font-bold text-white mb-2">Version History</h4>
-            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50 text-xs">
-              <div class="font-bold text-white mb-1">Current release (Initial release)</div>
-              <ul class="list-disc list-inside space-y-0.5 text-slate-400">
-                <li>IEEE Mentor scan, parse, sort, and DCN-preserving grouping</li>
-                <li>PDF and Microsoft Office conversion</li>
-                <li>A4 TOC, Separator, bookmark, link, and manifest generation</li>
-                <li>Single-instance locking and installer graceful shutdown</li>
-                <li>Home screen Bundle Target Count configuration</li>
-                <li>TOC Generation Attribution footer with clickable project URL</li>
-              </ul>
+            <div class="space-y-3 text-xs">
+              <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                <div class="font-bold text-white mb-1">Current release (v0.2.0) — 2026-09-17</div>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                  <li>Added 3 fallback recovery methods for PDF conversion failures</li>
+                  <li>Some minor fixes and improvements</li>
+                </ul>
+              </div>
+              <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                <div class="font-bold text-white mb-1">v0.1.0</div>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                  <li>Initial release</li>
+                  <li>IEEE Mentor scan, parse, sort, and DCN-preserving grouping</li>
+                  <li>PDF and Microsoft Office conversion</li>
+                  <li>A4 TOC, Separator, bookmark, link, and manifest generation</li>
+                  <li>Single-instance and installer graceful shutdown</li>
+                  <li>Home screen Bundle Target Count (default 30, session-only)</li>
+                  <li>Persist the last Browse-selected Input Folder per user; fall back to Windows Downloads</li>
+                  <li>TOC page-1 title IEEE 802.{Standard} Contribution Bundle : {StartDCN} - {EndDCN}</li>
+                  <li>Separator Download field with Mentor URL and visual line wrapping</li>
+                  <li>TOC Generation Attribution with clickable project URL</li>
+                  <li>Accept PowerPoint .potm templates</li>
+                </ul>
+              </div>
             </div>
           </div>
 
