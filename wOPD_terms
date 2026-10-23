@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service for wOPD — wOPD | wooApps™</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>body {font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;background-color:#0B0F19!important;color:#cbd5e1!important}code {font-family:'JetBrains Mono',monospace} a:focus-visible {outline:2px solid #818cf8;outline-offset:4px}</style>
+</head>
+<body class="bg-[#0B0F19] text-slate-300 antialiased selection:bg-indigo-500/30 selection:text-indigo-200 min-h-screen flex flex-col">
+<header class="border-b border-slate-800/80 bg-[#0B0F19]/80">
+  <div class="max-w-5xl mx-auto px-6 py-10 sm:py-12">
+    <a href="index.html" class="text-sm text-indigo-400 hover:text-indigo-300 font-semibold">&larr; wooApps™ Home</a>
+    <div class="mt-7 inline-flex items-center rounded-full px-3.5 py-1.5 text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">wOPD · Google Drive Integration</div>
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-5">Terms of Service for wOPD</h1>
+    <p class="text-sm text-slate-400 mt-3">Last updated: October 23, 2026</p>
+  </div>
+</header>
+<main class="max-w-5xl w-full mx-auto px-6 py-10 sm:py-12 flex-1">
+  <article class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 sm:p-9 shadow-lg max-w-4xl space-y-8 text-sm leading-7 text-slate-300">
+  <section class="space-y-3">
+    <h2 class="text-base sm:text-lg font-bold text-white">1. Application</h2>
+    <p>wOPD is a Windows desktop application for retrieving, processing, organizing, and managing patent documents.</p>
+    <p>The application also provides optional Google Drive file upload functionality.</p>
+  </section>
+  <section class="space-y-3">
+    <h2 class="text-base sm:text-lg font-bold text-white">2. Use of the Application</h2>
+    <p>Users are responsible for ensuring that their use of wOPD complies with applicable laws, intellectual property rights, and third-party service terms.</p>
+  </section>
+  <section class="space-y-3">
+    <h2 class="text-base sm:text-lg font-bold text-white">3. Google Drive Integration</h2>
+    <p>Google Drive integration requires authorization through the user’s Google account.</p>
+    <p>Users are responsible for selecting files for upload and managing files stored in their Google Drive.</p>
+    <p>Users may revoke Google Drive access through their Google Account settings.</p>
+  </section>
+  <section class="space-y-3">
+    <h2 class="text-base sm:text-lg font-bold text-white">4. Third-Party Services</h2>
+    <p>wOPD may interact with external patent information services and Google Drive.</p>
+    <p>The availability, accuracy, and operation of these services are subject to their respective providers.</p>
+  </section>
+  <section class="space-y-3">
+    <h2 class="text-base sm:text-lg font-bold text-white">5. Disclaimer</h2>
+    <p>wOPD is provided on an “as is” basis, to the extent permitted by applicable law.</p>
+    <p>The developer does not guarantee uninterrupted operation or the accuracy and completeness of information obtained from third-party services.</p>
+    <p>Nothing in these Terms excludes liability that cannot legally be excluded.</p>
+  </section>
+  <section class="space-y-3">
+    <h2 class="text-base sm:text-lg font-bold text-white">6. Changes and Contact</h2>
+    <p>These Terms may be updated to reflect changes in the application.</p>
+    <p>For inquiries, contact the developer at <a class="text-indigo-400 hover:text-indigo-300 underline underline-offset-2" href="mailto:maybe601@gmail.com">maybe601@gmail.com</a>.</p>
+  </section>
+  </article>
+</main>
+<footer class="border-t border-slate-800/80 bg-[#0B0F19]/90 py-9 mt-10">
+ <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+  <span>Copyright &copy; 2026 <strong class="text-slate-400">HyunWoo Lee</strong>. All rights reserved.</span>
+  <nav aria-label="Legal links" class="flex flex-wrap items-center gap-x-5 gap-y-2">
+   <a class="text-indigo-400 hover:text-indigo-300 underline underline-offset-2" href="index.html">Home</a>
+   <a class="text-indigo-400 hover:text-indigo-300 underline underline-offset-2" href="wOPD_privacy.html">Privacy Policy</a>
+   <a class="text-indigo-400 hover:text-indigo-300 underline underline-offset-2" href="wOPD_terms.html">Terms of Service</a>
+  </nav>
+ </div>
+</footer>
+</body>
+</html>
