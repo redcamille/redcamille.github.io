@@ -36,19 +36,21 @@
   <section class="space-y-3">
     <h2 class="text-base sm:text-lg font-bold text-white">3. Use of Google User Data</h2>
     <p>Google Drive authorization is used solely to upload files selected or generated through wOPD and to perform operations necessary to complete those uploads.</p>
-    <p>Google user data is not used for advertising, profiling, or unrelated purposes.</p>
     <p>wOPD does not sell or share Google user data with third parties for advertising or unrelated purposes. Google account authorization data is processed only as necessary to provide the Google Drive upload functionality.</p>
   </section>
   <section class="space-y-3">
     <h2 class="text-base sm:text-lg font-bold text-white">4. Data Storage and Security</h2>
     <p>wOPD processes patent documents locally on the user’s computer.</p>
     <p>Google OAuth credentials are used to authorize Google Drive uploads.</p>
-    <p><strong class="text-amber-300">Implementation details to confirm before publication:</strong> Where OAuth tokens are stored, how they are protected, whether authentication data appears in logs, whether any data is sent to a server other than Google, and how locally stored credentials can be deleted. This section must be replaced with an accurate description of the actual application behavior.</p>
+    <p>Google OAuth authentication credentials are stored locally on the user's computer and are used solely to authorize Google Drive operations.</p>
+    <p>wOPD does not transmit authentication credentials to any developer-operated server, as no such server is used by the application.</p>
+    <p>Users may revoke Google Drive access through their Google Account settings and may delete any locally stored authentication credentials at any time by removing the application's local data from their computer.</p>
   </section>
   <section class="space-y-3">
     <h2 class="text-base sm:text-lg font-bold text-white">5. Data Sharing</h2>
     <p>wOPD transfers user-selected files to Google Drive through Google’s authorized APIs.</p>
     <p>Google user data is not sold to third parties or used for advertising.</p>
+    <p>wOPD does not share Google user data with third parties other than Google as necessary to provide the authorized Google Drive functionality, except where required by law or with the user's explicit consent.</p>
   </section>
   <section class="space-y-3">
     <h2 class="text-base sm:text-lg font-bold text-white">6. Access Revocation and Data Deletion</h2>
