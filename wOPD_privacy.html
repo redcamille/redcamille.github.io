@@ -35,15 +35,14 @@
   </section>
   <section class="space-y-3">
     <h2 class="text-base sm:text-lg font-bold text-white">3. Use of Google User Data</h2>
-    <p>Google Drive authorization is used solely to upload files selected or generated through wOPD and to perform operations necessary to complete those uploads.</p>
+    <p>Google Drive authorization is used solely to upload final PDF documents generated or selected through wOPD to the user's own Google Drive (My Drive).</p>
     <p>wOPD does not sell or share Google user data with third parties for advertising or unrelated purposes. Google account authorization data is processed only as necessary to provide the Google Drive upload functionality.</p>
   </section>
   <section class="space-y-3">
     <h2 class="text-base sm:text-lg font-bold text-white">4. Data Storage and Security</h2>
     <p>wOPD processes patent documents locally on the user’s computer.</p>
-    <p>Google OAuth authentication credentials are stored locally on the user's computer and are used solely to authorize Google Drive operations.</p>
-    <p>wOPD does not transmit authentication credentials to any developer-operated server, as no such server is used by the application.</p>
-    <p>Locally stored Google authentication credentials can be deleted by removing the application's locally stored authentication data from the user's computer.</p>
+    <p>Google OAuth refresh tokens are stored locally in Windows Credential Manager under the current Windows user account. Access tokens are retained only in memory while the application is running.</p>
+    <p>Authentication information is exchanged directly with Google. wOPD does not transmit authentication credentials or uploaded files to any developer-operated server.</p>
   </section>
   <section class="space-y-3">
     <h2 class="text-base sm:text-lg font-bold text-white">5. Data Sharing</h2>
@@ -53,9 +52,9 @@
   </section>
   <section class="space-y-3">
     <h2 class="text-base sm:text-lg font-bold text-white">6. Access Revocation and Data Deletion</h2>
-    <p>Users can revoke wOPD’s Google Drive access through their Google Account settings: <a class="text-indigo-400 hover:text-indigo-300 underline underline-offset-2 break-all" href="https://myaccount.google.com/connections" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/connections</a></p>
-    <p>Files previously uploaded to Google Drive remain under the user’s control and can be managed or deleted through Google Drive.</p>
-    <p>Revoking access does not automatically delete previously uploaded files.</p>
+    <p>Users can disconnect their Google account through wOPD's authorization revocation feature. When this feature is used, wOPD attempts to revoke the Google OAuth token and deletes the locally stored refresh token from Windows Credential Manager.</p>
+    <p>Uninstalling wOPD does not automatically delete the locally stored refresh token. Users should disconnect their Google account through wOPD before uninstalling the application.</p>
+    <p>Previously uploaded files remain in Google Drive and are not automatically deleted when access is revoked or the application is uninstalled.</p>
   </section>
   <section class="space-y-3">
     <h2 class="text-base sm:text-lg font-bold text-white">7. Google API Services User Data Policy</h2>
