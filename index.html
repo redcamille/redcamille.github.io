@@ -76,7 +76,7 @@
                 </div>
                 <p class="text-xs text-slate-400 line-clamp-1">PDF &amp; Office Merger / Splitter</p>
               </div>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 shrink-0">v0.4.1</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 shrink-0">v0.4.3</span>
             </button>
 
             <!-- App 2 Button: wIEEE -->
@@ -116,7 +116,7 @@
                 </div>
                 <p class="text-xs text-slate-400 line-clamp-1">Patent Search, Family &amp; FW</p>
               </div>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 shrink-0">v0.2.0</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 shrink-0">v0.3.0</span>
             </button>
           </nav>
         </div>
@@ -136,7 +136,7 @@
             <div class="p-6 sm:p-8 border-b border-slate-800/80 bg-gradient-to-r from-indigo-950/30 via-slate-900/60 to-slate-900/60">
               <div class="flex flex-wrap items-center gap-2.5 mb-3">
                 <span class="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-lg">Context Menu &amp; Send to</span>
-                <span class="text-xs text-slate-400 font-mono bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">v0.4.1</span>
+                <span class="text-xs text-slate-400 font-mono bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">v0.4.3</span>
                 <span class="text-xs text-indigo-300/80 font-mono ml-auto">Powered by wooCore</span>
               </div>
               <h2 class="text-3xl font-extrabold text-white tracking-tight">wBundle™</h2>
@@ -243,10 +243,25 @@
                 <h4 class="text-base font-bold text-white mb-2">Version History</h4>
                 <div class="space-y-3 text-xs">
                   <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
-                    <div class="font-bold text-white mb-1">Current release (v0.4.1) — 2026-09-29</div>
+                    <div class="font-bold text-white mb-1">Current release (v0.4.3) — 2026-11-05</div>
+                    <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                      <li>Improved Word bookmark conversion performance</li>
+                      <li>Added detailed Word conversion progress</li>
+                      <li>Resolved malformed Word heading bookmark hierarchy</li>
+                    </ul>
+                  </div>
+                  <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                    <div class="font-bold text-white mb-1">v0.4.2 — 2026-10-27</div>
+                    <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                      <li>Resolved bookmark issue</li>
+                    </ul>
+                  </div>
+                  <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                    <div class="font-bold text-white mb-1">v0.4.1 — 2026-09-29</div>
                     <ul class="list-disc list-inside space-y-0.5 text-slate-400">
                       <li>Generate PDF bookmarks from Word headings in priority order during conversion</li>
                       <li>Updated FW bookmark color rules</li>
+                      <li>Renamed the application from wooBundle™ to wBundle™</li>
                     </ul>
                   </div>
                   <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
@@ -261,21 +276,31 @@
                   <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
                     <div class="font-bold text-white mb-1">v0.3.0</div>
                     <ul class="list-disc list-inside space-y-0.5 text-slate-400">
-                      <li>Replaced static per-file Explorer command with native x64 legacy context-menu shell extension</li>
+                      <li>Replaced the static per-file Explorer command with a native x64 legacy context-menu shell extension</li>
                       <li>Launch one wooBundle process for each Explorer context-menu selection</li>
-                      <li>Preserved existing all-users Send to integration</li>
-                      <li>Accept .zip selections; inspect metadata without extracting; extract after Start into per-run temporary directory</li>
+                      <li>Preserved the existing all-users Send to integration</li>
+                      <li>Accept .zip selections; inspect metadata without extracting; extract after Start into a per-run temporary directory</li>
                       <li>Accept Word .dot, PowerPoint .odp/.potx/.potm/.pot, and Visio .vsd/.vsdx</li>
                       <li>General performance optimizations and stability enhancements</li>
                     </ul>
                   </div>
                   <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
                     <div class="font-bold text-white mb-1">v0.2.0</div>
-                    <p class="text-slate-400">Windows Explorer Send to integration for all users; skip collection wait for Send to and for two or more file arguments; minor fixes.</p>
+                    <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                      <li>Windows Explorer Send to integration for all users</li>
+                      <li>Skip collection wait for Send to and for two or more file arguments</li>
+                      <li>Some minor fixes and improvements</li>
+                    </ul>
                   </div>
                   <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
                     <div class="font-bold text-white mb-1">v0.1.0</div>
-                    <p class="text-slate-400">Initial release; PDF/Office conversion &amp; merge; individual PDF conversion; bookmark generation and patent color rules; static Explorer command.</p>
+                    <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                      <li>Initial release</li>
+                      <li>PDF and Microsoft Office conversion and merge support</li>
+                      <li>Individual PDF conversion</li>
+                      <li>Bookmark generation and patent-document color rules</li>
+                      <li>The static per-file Explorer command (&quot;%1&quot;) integration</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -536,7 +561,7 @@
             <div class="p-6 sm:p-8 border-b border-slate-800/80 bg-gradient-to-r from-amber-950/30 via-slate-900/60 to-slate-900/60">
               <div class="flex flex-wrap items-center gap-2.5 mb-3">
                 <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-lg">Start Menu &amp; Desktop App</span>
-                <span class="text-xs text-slate-400 font-mono bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">v0.2.0</span>
+                <span class="text-xs text-slate-400 font-mono bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">v0.3.0</span>
                 <span class="text-xs text-amber-300/80 font-mono ml-auto">Standalone WebView2 App</span>
               </div>
               <h2 class="text-3xl font-extrabold text-white tracking-tight">wOPD™</h2>
@@ -697,34 +722,97 @@
                 <h4 class="text-base font-bold text-white mb-2">Version History</h4>
                 <div class="space-y-3 text-xs">
                   <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
-                    <div class="font-bold text-white mb-1">Current release (v0.2.0) — 2026-10-24</div>
+                    <div class="font-bold text-white mb-1">Current release (v0.3.0) — 2026-11-18</div>
                     <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                      <li>When Google Drive saving is selected, citation workbooks are converted to UTF-8 Markdown (.md) files for upload while keeping the Excel (.xlsx) workbook on your PC.</li>
+                      <li>When Google Drive sign-in is already complete, Google Drive saving starts selected. Without sign-in it stays cleared.</li>
+                      <li>An EP priority document is saved when its first page shows the country, application number, or filing date. A missing part is written as unknown, including a Korean Intellectual Property Office certificate. The document is skipped only when all three are missing.</li>
+                      <li>FW ALL includes US Assignment(s) and shows a partial selection when only some FW choices are selected. Assignment(s) stays available when FW ALL is off.</li>
+                      <li>Citation workbooks end with __citations.xlsx.</li>
+                      <li>OCR no longer loses its temporary source while page work is still active. When OCR cannot finish, the original PDF is saved under its publication or document name.</li>
+                      <li>Family Trees open on By Order. The view buttons and building captions are ordered By Order, By Year, then By Country.</li>
+                      <li>KOPD download errors identify each document with the date and document name shown in the File Wrapper list.</li>
+                      <li>Added Assignment Center and document links, separate US Assignment download and OCR options, and Assignment progress reporting.</li>
+                      <li>The window title and installer identify this release as version 0.3.0.</li>
+                      <li>EP Citations correctly separates combined category codes such as XYI and IA from names and details.</li>
+                      <li>US Citations preserves lettered, numeric, and asterisked IDS references across substitute and custom PTO-1449 forms, retains MM/YYYY patent dates and Other Art entries, removes table headers, examiner initials, duplicate country prefixes, and multi-line examiner signatures from reference numbers, and ignores IDS transmittal letters.</li>
+                      <li>Family Tree 100% centers the nearest patent or priority card so zooming into empty space does not hide every card.</li>
+                      <li>Added By Order Family Trees with country rows, a separate building caption, and an additional PNG snapshot.</li>
+                      <li>WO (PCT) and priority applications now appear from the top of their column in By Year and By Order Family Trees alongside national patent rows, while national patents are separated into country rows. By Country is unchanged.</li>
+                      <li>Family Trees no longer draw a duplicate WO (PCT) link to a later application that already continues from another national-phase application of the same PCT.</li>
+                      <li>Family Trees now display Google Patents <code class="font-mono text-slate-300">Ceased</code> status badges and use the same badge color for <code class="font-mono text-slate-300">Abandoned</code>, <code class="font-mono text-slate-300">Withdrawn</code>, and <code class="font-mono text-slate-300">Ceased</code>.</li>
+                      <li>Family Trees show Google Patents <code class="font-mono text-slate-300">Not-in-force</code> in that same color, <code class="font-mono text-slate-300">Reinstated</code> and <code class="font-mono text-slate-300">Granted</code> in the Active color, and uncommon statuses with their own wording on a white badge. A patent with no status still has no badge.</li>
+                      <li>A Google Patents status that begins with a known status, such as <code class="font-mono text-slate-300">Active, expires ...</code>, shows that status badge.</li>
+                      <li>By Year Family Trees keep each country on its own row. A later patent stays on that country's row, while a patent from another country uses a separate row even when it continues only from a priority.</li>
+                      <li>EP divisional applications in Family Trees now use the filing year from their EP application number for year placement and chronological ordering while keeping their legal filing date on the card, and same-country patents in By Year and By Country stay aligned horizontally on their country row.</li>
+                      <li>Family Tree relationship lines now use smoother curves with varied start and end lengths and rounded arches within the same column, reducing overlapping lines across By Year, By Country, and By Order views, while keeping arrowheads the same size on emphasized ancestor paths.</li>
+                    </ul>
+                  </div>
+                  <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                    <div class="font-bold text-white mb-1">v0.2.2 — 2026-11-05</div>
+                    <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                      <li>Long text in the EP Citations Name and Detail columns stays on one line. Scroll the table horizontally to read the rest.</li>
+                      <li>JP and CN File Wrapper document names now show whether the original, English, or both versions are available. Downloads request only the available versions.</li>
+                    </ul>
+                  </div>
+                  <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                    <div class="font-bold text-white mb-1">v0.2.1 — 2026-10-27</div>
+                    <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                      <li>Long text in the US Citations Remarks column stays on one line. Scroll the table horizontally to read the rest.</li>
+                      <li>EPO Register downloads now recognize ZIP filenames with non-English document codes and recover more reliably from transient Register-window and Citations-page failures.</li>
+                      <li>File Wrapper downloads now keep same-date, same-title USPTO documents separate and match KOPD ZIP documents by their metadata instead of ZIP order.</li>
+                    </ul>
+                  </div>
+                  <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                    <div class="font-bold text-white mb-1">v0.2.0 — 2026-10-26</div>
+                    <ul class="list-disc list-inside space-y-0.5 text-slate-400">
+                      <li>By Year Family Trees with four or more filing-year groups now remove unused horizontal space even when the tree was previously below the wide-layout limit.</li>
+                      <li>EP Register documents titled &quot;Priority document&quot; are now offered as a separate Foreign Priority selection and saved as separate Priority files, like electronically transmitted priority documents. Documents with any other title remain in the File Wrapper.</li>
+                      <li>A Chinese family member shows its grant number when that number differs from the publication number. That grant number is also used for the original PDF and the Family Tree issue line.</li>
                       <li>OCR now offers Performance priority as the default and Speed priority as an alternative. Korean documents automatically use the Korean-capable engine when identified.</li>
-                      <li>US File Wrapper OCR can extract bookmarked citation forms, include citation-page recognition in the final PDF, and show the references in a Citations table.</li>
+                      <li>Packaged OCR includes the required text-layer fonts and retries transient access failures for its private temporary PDF.</li>
+                      <li>OCR no longer opens command windows during downloads, avoids weak Korean matches changing the selected engine, and uses a more reliable writable workspace for temporary files.</li>
+                      <li>US File Wrapper OCR and US Citation are separate options. Only Citation starts selected, and citation-only review processes matching bookmarked sections without creating a searchable File Wrapper PDF.</li>
+                      <li>Regular US patent File Wrapper OCR can extract bookmarked citation forms, include citation-page recognition in the final PDF, and show the references in a Citations table. US provisional and foreign Priority PDFs remain OCR-only.</li>
+                      <li>Citation review now includes supported continuation pages even when the form heading is not repeated on each page.</li>
+                      <li>Citation review shows identical copies of a citation page once, omits examiner sign-off fields, and keeps scholarly references as reference text instead of document numbers.</li>
+                      <li>Citation review retains document numbers, dates, names, examiner marks, and classification values from supported older PTO-892 column layouts.</li>
+                      <li>Citation review now supports older IDS sheets that print a single letter for each reference. Every reference keeps its printed letter, including journal references whose letter was unreadable, and dates written with month names appear as dates.</li>
+                      <li>Older single-letter IDS sheets are no longer mistaken for numeric EFS sheets when OCR reads the letter I as the number 1, so journal titles remain in the reference-text column.</li>
+                      <li>Citation review now supports PTO/SB/08a IDS sheets, including continued US patent, application publication, foreign patent, and non-patent literature pages. Shifted PTO-892 columns retain their numbers, dates, names, and classifications without adding empty non-patent rows.</li>
+                      <li>Citation review now recovers references whose first Cite number is unreadable, keeps continued non-patent literature out of Number, retains older left-shifted IDS and PTO-892 rows, and marks an unreadable bookmarked document as <code class="font-mono text-slate-300">Failed to recognize</code>.</li>
+                      <li>The US Citations table title now reminds you that extracted US references require direct verification against the source document.</li>
                       <li>Selected EP patent File Wrapper downloads retrieve European Patent Register references afterward and show them in a separate EP Citations table.</li>
-                      <li>Finished citation tables are saved in the patent folder as an Excel workbook named after the grant number, or publication number when unavailable. The workbook is not uploaded to Google Drive.</li>
-                      <li>Family Trees can be viewed By Year or By Country (arranging US, EP, and other countries). PNG saving creates separate files for both views.</li>
+                      <li>Incomplete EPO Register ZIP responses preserve confirmed PDFs and report unavailable or ambiguous remaining documents separately.</li>
+                      <li>EP File Wrapper rows titled <code class="font-mono text-slate-300">Sequence listing</code> are no longer selectable.</li>
+                      <li>Finished citation tables are saved in the patent folder as an Excel workbook named after the grant number, or the publication number when no grant number is available. When Google Drive saving is selected, that workbook is uploaded.</li>
+                      <li>Family Trees can be viewed By Year or By Country. By Country arranges US, EP, and other-country groups without changing the By Year view, and PNG saving creates one file for each view.</li>
+                      <li>Family Tree relation lines remain visible when a view finishes drawing or patent status and expiration information arrives; switching views is not required.</li>
                     </ul>
                   </div>
                   <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
                     <div class="font-bold text-white mb-1">v0.1.1 — 2026-10-21</div>
                     <ul class="list-disc list-inside space-y-0.5 text-slate-400">
-                      <li>Family Tree copy and PNG save keep every connecting line attached to its nodes, include curves on every side, and use a transparent background</li>
-                      <li>Copied Family Tree and Assignment images paste with the same transparent background and colors as the saved PNG</li>
+                      <li>Family Tree copy and PNG save keep every connecting line attached to its nodes, include curves on every side, and use a transparent background.</li>
+                      <li>Copied Family Tree and Assignment images paste with the same transparent background and colors as the saved PNG.</li>
                       <li>EPO OPS and USPTO ODP searches are no longer disrupted by CA-bundle environment overrides. Certificate verification and proxy settings remain enabled.</li>
                     </ul>
                   </div>
                   <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
                     <div class="font-bold text-white mb-1">v0.1.0 — 2026-10-20</div>
                     <ul class="list-disc list-inside space-y-0.5 text-slate-400">
-                      <li>Added patent search by application, publication, or grant number with INPADOC family lookup and legacy US number support</li>
-                      <li>Added Patent Family Tree visualization with legal status, expiration dates, and PNG export</li>
-                      <li>Added File Wrapper and Priority document downloads from USPTO, EPO Register, and KOPD with PDF merging</li>
-                      <li>Added original patent PDF downloads from Google Patents and USPTO assignment/fee lookups</li>
-                      <li>Added support for KR, JP, and CN documents, including English translations where available</li>
-                      <li>Added searchable-PDF OCR with language detection and parallel download handling</li>
-                      <li>Added optional Google Drive uploads with browser authentication and resumable transfers</li>
-                      <li>Fixed high-DPI scaling, locked search button during active downloads, and enhanced Windows notifications</li>
+                      <li>Added patent search by application, publication, or grant number with INPADOC family lookup and legacy US number support.</li>
+                      <li>Added Patent Family Tree visualization with legal status, expiration dates, and PNG export.</li>
+                      <li>Added File Wrapper and Priority document downloads from USPTO, EPO Register, and KOPD with PDF merging.</li>
+                      <li>Added original patent PDF downloads from Google Patents and USPTO assignment/fee lookups.</li>
+                      <li>Added support for Korean, Japanese, and Chinese documents, including English translations where available.</li>
+                      <li>Added searchable-PDF OCR with language detection and parallel download handling.</li>
+                      <li>Added optional Google Drive uploads with browser authentication and resumable transfers.</li>
+                      <li>Fixed high-DPI scaling and screen fitting issues across different Windows text-size settings.</li>
+                      <li>Improved download state controls so the search button locks during active downloads and progress states reset properly.</li>
+                      <li>Enhanced Windows notifications to show patent numbers and appear reliably even when the app is focused.</li>
+                      <li>Improved saving reliability to redirected, protected, or external-drive folders.</li>
+                      <li>Updated default startup options with File Wrapper, Priority, and OCR options unchecked.</li>
                     </ul>
                   </div>
                 </div>
@@ -741,26 +829,26 @@
                     <div class="bg-black/30 p-3.5 rounded-xl border border-slate-800">
                       <div class="text-amber-400 font-bold mb-1.5">Core &amp; Desktop UI</div>
                       <ul class="space-y-1 text-slate-400">
-                        <li>CPython 3.14 (PSF-2.0) &amp; Tcl/Tk 9</li>
+                        <li>CPython 3.14.10 (PSF-2.0) &amp; Tcl/Tk 9</li>
                         <li>pywebview 6.2.1 (BSD-3-Clause)</li>
                         <li>pythonnet 3.2.1 &amp; clr_loader 0.3.1 (MIT)</li>
-                        <li>React 19.3.0, react-dom 19.3.0 (MIT)</li>
+                        <li>React 19.3.1, react-dom 19.3.1 (MIT)</li>
                         <li>@xyflow/react 12.12.0, html-to-image 1.11.13 (MIT)</li>
-                        <li>Tailwind CSS 4.3.3, daisyUI 5.7.47, lucide-react 1.54.0</li>
+                        <li>Tailwind CSS 4.3.5, daisyUI 5.8.1, lucide-react 1.73.0</li>
                       </ul>
                     </div>
                     <div class="bg-black/30 p-3.5 rounded-xl border border-slate-800">
                       <div class="text-amber-400 font-bold mb-1.5">PDF, OCR, Excel &amp; Network</div>
                       <ul class="space-y-1 text-slate-400">
-                        <li>ONNX Runtime 1.31.0 &amp; PP-OCRv6 ONNX models</li>
-                        <li>NumPy 2.5.4, FlatBuffers, pydantic-core, fonttools</li>
-                        <li>Tesseract OCR 5.5.3 (Apache-2.0) &amp; ocrmypdf 17.13.0</li>
-                        <li>pypdf 6.19.0, pikepdf 10.16.0, pypdfium2 5.14.0</li>
-                        <li>XlsxWriter 3.3.0 (BSD-2-Clause)</li>
-                        <li>pdfminer.six, pillow 12.3.0, lxml 6.1.3, uharfbuzz 0.56.3</li>
-                        <li>beautifulsoup4 4.15.0, soupsieve (MIT)</li>
-                        <li>requests 2.32.5, cryptography 46.0.6, OpenSSL 3</li>
-                        <li>Google API Python Client 2.201.0 &amp; google-auth 2.62.0</li>
+                        <li>ONNX Runtime 1.32.0 &amp; PP-OCRv6 ONNX models</li>
+                        <li>NumPy 2.5.5, FlatBuffers 25.12.19, pydantic-core 2.50.0, fonttools 4.66.1</li>
+                        <li>Tesseract OCR 5.5.3 (Apache-2.0) &amp; ocrmypdf 17.14.2</li>
+                        <li>pypdf 7.1.0, pikepdf 10.18.2, pypdfium2 5.15.2</li>
+                        <li>XlsxWriter 3.3.1 (BSD-2-Clause)</li>
+                        <li>pdfminer.six 20260107, pillow 13.0.0, lxml 6.1.3, uharfbuzz 0.56.3</li>
+                        <li>beautifulsoup4 4.15.0, soupsieve 2.10 (MIT)</li>
+                        <li>requests 2.34.2, cryptography 50.0.2, OpenSSL 3</li>
+                        <li>Google API Python Client 2.202.0 &amp; google-auth 2.62.2</li>
                       </ul>
                     </div>
                   </div>
